@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using Newtonsoft.Json;
 
 namespace Task3
 {
@@ -25,6 +26,11 @@ namespace Task3
         {
             if (string.IsNullOrEmpty(newCompany)) throw new ArgumentException("Company must not be emty", nameof(newCompany));
             if (string.IsNullOrEmpty(newModel)) throw new ArgumentException("Model must not be emty", nameof(newModel));
+
+            if (newPieces > 99) throw new ArgumentException("Pieces must be lesser than 99.", nameof(newPieces));
+
+            if (newPrice > 99999) throw new ArgumentException("Price must be lesser than 99999.", nameof(newPrice));
+            if (newPrice < 0) throw new ArgumentException("Price must not be negative.", nameof(newPrice));
 
             Company = newCompany;
             Model = newModel;
@@ -61,12 +67,12 @@ namespace Task3
         /// <returns></returns>
         private decimal UpdatePrice(uint Pieces, decimal Price)
         {
-             if (Pieces > 10)
+            if (Pieces > 10)
             {
                 Price *= discount;
                 return Price / 100;
             }
-        return Price;
+            return Price;
         }
 
         #region IInfo implementation
@@ -76,15 +82,15 @@ namespace Task3
         /// Gets a textual description of this item.
         /// </summary>
         public string Description => Company;
-    
-         /// <summary>
-         /// Gets the amount
-         /// </summary>
-        public uint  GetPieces => Pieces;
 
-          /// <summary>
-          /// Gets a special price of this item.
-          /// </summary>
+        /// <summary>
+        /// Gets the amount
+        /// </summary>
+        public uint GetPieces => Pieces;
+
+        /// <summary>
+        /// Gets a special price of this item.
+        /// </summary>
         public decimal GetPrice => Price;
 
 
