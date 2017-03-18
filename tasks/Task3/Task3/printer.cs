@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Task3
 {
@@ -20,10 +19,16 @@ namespace Task3
         /// <param name="newModel"></param>
         /// <param name="newPieces"></param>
         /// <param name="newPrice"></param>
+        [JsonConstructor]
         public Printer(string newCompany, string newModel, uint newPieces, decimal newPrice)
         {
-            if (string.IsNullOrEmpty(newCompany)) throw new ArgumentException("Company must not be emty", nameof(newCompany));
-            if (string.IsNullOrEmpty(newModel)) throw new ArgumentException("Model must not be emty", nameof(newModel));
+            // if (string.IsNullOrEmpty(newCompany)) throw new ArgumentException("Company must not be emty", nameof(newCompany));
+            // if (string.IsNullOrEmpty(newModel)) throw new ArgumentException("Model must not be emty", nameof(newModel));
+
+            if (newPieces > 99) throw new ArgumentException("Pieces must be lesser than 99.", nameof(newPieces));
+
+            if (newPrice > 99999) throw new ArgumentException("Price must be lesser than 99999.", nameof(newPrice));
+            if (newPrice < 0) throw new ArgumentException("Price must not be negative.", nameof(newPrice));
 
             Company = newCompany;
             Model = newModel;

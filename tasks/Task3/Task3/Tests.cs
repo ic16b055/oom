@@ -49,4 +49,43 @@ namespace Tests
         }
 
     }
+    public class PrinterTests
+    {
+        [Test]
+        public void CanCreatPrinter()
+        {
+            var x = new Printer("Canon", "MG5350", 8, 300);
+
+            Assert.IsTrue(x.Company == "Canon");
+            Assert.IsTrue(x.Model == "MG5350");
+            Assert.IsTrue(x.Pieces == 8);
+            Assert.IsTrue(x.Price == 300);
+        }
+
+        [Test]
+        public void CannotCreateCompanyWithEmptyTitle()
+        {
+            var x = new Printer(null, "xxx", 0, 0);
+        }
+
+        [Test]
+        public void CannotCreateModelWithEmptyTitle()
+        {
+            var x = new Printer("xxx", null, 0, 0);
+        }
+
+        [Test]
+        public void CannotCreatePiecesGreatherThan99()
+        {
+            var x = new Printer("xxx", "xxx", 100, 0);
+        }
+
+        [Test]
+        public void CannotCreatePriceNotInRange()
+        {
+            var lowestPrice = new Printer("xxx", "xxx", 0, -5);
+            var highestPrice = new Printer("xxx", "xxx", 0, 100000);
+        }
+
+    }
 }

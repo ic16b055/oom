@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Serialization.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Computer.cs" />
     <Compile Include="IItem.cs" />

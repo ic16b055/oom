@@ -16,11 +16,11 @@ namespace Task3
         /// </summary>
         uint GetPieces { get; }
 
-
         /// <summary>
         /// Gets a price
         /// </summary>
         decimal GetPrice { get; }
+
 
 
     }

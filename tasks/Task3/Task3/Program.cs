@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+
 
 namespace Task3
 {
@@ -20,11 +19,21 @@ namespace Task3
                 new Printer ("Canon","PIXMA",2,250)
              };
 
+          Console.WriteLine("\nBefore: \n");
+
             foreach (var x in items)
             {
                 Console.WriteLine("{0} {1} {2}", x.Description.Truncate(2), x.GetPieces, x.GetPrice);
             }
 
-        }
+
+
+           
+            
+           
+            Serialization.Run_item(items);
+           
+        }      
+
     }
 }
