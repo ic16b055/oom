@@ -15,23 +15,23 @@ namespace Task3
         /// <CONSTRUCTOR>
         /// Creats new Object
         /// </summary>
-        /// <param name="newCompany"></param>
-        /// <param name="newModel"></param>
+        /// <param name="company"></param>
+        /// <param name="model"></param>
         /// <param name="newPieces"></param>
         /// <param name="newPrice"></param>
         [JsonConstructor]
-        public Computer(string newCompany, string newModel, uint newPieces, decimal newPrice)
+        public Computer(string company, string model, uint newPieces, decimal newPrice)
         {
-           // if (string.IsNullOrEmpty(newCompany)) throw new ArgumentException("Company must not be emty", nameof(newCompany));
-           // if (string.IsNullOrEmpty(newModel)) throw new ArgumentException("Model must not be emty", nameof(newModel));
+            if (string.IsNullOrEmpty(company)) throw new ArgumentException("Company must not be emty", nameof(company));
+            if (string.IsNullOrEmpty(model)) throw new ArgumentException("Model must not be emty", nameof(model));
 
             if (newPieces > 99) throw new ArgumentException("Pieces must be lesser than 99.", nameof(newPieces));
 
             if (newPrice > 99999) throw new ArgumentException("Price must be lesser than 99999.", nameof(newPrice));
             if (newPrice < 0) throw new ArgumentException("Price must not be negative.", nameof(newPrice));
 
-            Company = newCompany;
-            Model = newModel;
+            Company = company;
+            Model = model;
             Pieces = UpdatePieces(newPieces);
             Price = UpdatePrice(newPieces, newPrice);
 
