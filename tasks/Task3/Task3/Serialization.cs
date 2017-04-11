@@ -26,7 +26,6 @@ namespace Task3
             {     
                 Console.WriteLine("{0} {1} {2}", x.Description.Truncate(2), x.GetPieces, x.GetPrice);
             }
-            Console.WriteLine();
 
         }
 
