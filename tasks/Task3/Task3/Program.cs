@@ -27,8 +27,9 @@ namespace Task3
             do
             {
                 Console.WriteLine("\n**** Please select: ****\n");
-                Console.WriteLine(" 1  Serialization\n");
-                Console.WriteLine(" 2  Pull\n");
+                Console.WriteLine(" 1  Tesla Aktienkurs\n");
+                Console.WriteLine(" 2  Serialization\n");
+                Console.WriteLine(" 3  Pull\n");
                 Console.WriteLine(" 0  EXIT\n");
 
                 Console.WriteLine("************************\n");
@@ -36,11 +37,12 @@ namespace Task3
 
                 switch (select)
                 {
-                case 1: serial(items); break;
-                case 2: Pull.Run(); break;
+                    case 1: Web.GetValue(); break;
+                    case 2: serial(items); break;
+                    case 3: Pull.Run(); break;
 
                 }
-                if (select < 0 || select > 2) Console.WriteLine("Wrong input!\n");
+                if (select < 0 || select > 3) Console.WriteLine("Wrong input!\n");
 
 
             } while (select != 0);
