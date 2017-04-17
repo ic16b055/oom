@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Console;
 
 namespace Task3
 {
@@ -30,6 +25,7 @@ namespace Task3
                 Console.WriteLine(" 1  Tesla Aktienkurs\n");
                 Console.WriteLine(" 2  Serialization\n");
                 Console.WriteLine(" 3  Pull\n");
+                Console.WriteLine(" 4  Push Mouse movement\n");
                 Console.WriteLine(" 0  EXIT\n");
 
                 Console.WriteLine("************************\n");
@@ -40,14 +36,13 @@ namespace Task3
                     case 1: Web.GetValue(); break;
                     case 2: serial(items); break;
                     case 3: Pull.Run(); break;
-
+                    case 4: Push.Run(); break;
                 }
-                if (select < 0 || select > 3) Console.WriteLine("Wrong input!\n");
+                if (select < 0 || select > 4) Console.WriteLine("Wrong input!\n");
 
 
             } while (select != 0);
 
- 
 
         }
         private static void serial(IItem [] items)

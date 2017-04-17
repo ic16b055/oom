@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Task3
 {
     public static class StringExtensions
