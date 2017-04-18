@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using static System.Console;
+using System.Linq;
 
 namespace Task3
 {
@@ -20,18 +21,14 @@ namespace Task3
                 new Printer ("HP","LaserJet Pro",5,600),
 
             };
+
             foreach (var x in T)
             {
                 Console.WriteLine("{0} {1} {2}", x.Description.Truncate(2), x.GetPieces, x.GetPrice);
             }
 
-
-
         }
 
     }
-
-
-
 
 }

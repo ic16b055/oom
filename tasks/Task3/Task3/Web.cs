@@ -11,7 +11,7 @@ namespace Task3
         public static void GetValue()
         {
         var webclient = new System.Net.WebClient();
-        var url = "http://finance.yahoo.com/d/quotes.csv?s=TSLA&f=snbaopl1";
+        var url = "https://finance.yahoo.com/d/quotes.csv?s=TSLA&f=snbaopl1";
        
         var text = webclient.DownloadString(url);
         //Console.WriteLine(text);
@@ -20,6 +20,7 @@ namespace Task3
             var value = decimal.Parse(parts[7], CultureInfo.InvariantCulture);
             Console.WriteLine(value);
         }
+
 
     }
 

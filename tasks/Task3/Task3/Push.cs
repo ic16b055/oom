@@ -8,7 +8,7 @@ using static System.Console;
 
 namespace Task3
 {
-    class Push
+    public static class Push
     {
         public static void Run()
         {

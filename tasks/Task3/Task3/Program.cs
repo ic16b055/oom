@@ -26,6 +26,7 @@ namespace Task3
                 Console.WriteLine(" 2  Serialization\n");
                 Console.WriteLine(" 3  Pull\n");
                 Console.WriteLine(" 4  Push Mouse movement\n");
+                Console.WriteLine(" 5  Asynchrony\n");
                 Console.WriteLine(" 0  EXIT\n");
 
                 Console.WriteLine("************************\n");
@@ -37,8 +38,10 @@ namespace Task3
                     case 2: serial(items); break;
                     case 3: Pull.Run(); break;
                     case 4: Push.Run(); break;
+                    case 5: Asynchrony.Run(); break;
+                    
                 }
-                if (select < 0 || select > 4) Console.WriteLine("Wrong input!\n");
+                if (select < 0 || select > 5) Console.WriteLine("Wrong input!\n");
 
 
             } while (select != 0);
